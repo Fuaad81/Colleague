@@ -1,54 +1,43 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors
+// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_full_hex_values_for_flutter_colors
 
-import 'package:events/teacher/studentlist.dart';
-import 'package:events/teacher/tabbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TeacherReg extends StatefulWidget {
-  const TeacherReg({super.key});
+class Add_Event extends StatefulWidget {
+  const Add_Event({super.key});
 
   @override
-  State<TeacherReg> createState() => _TeacherRegState();
+  State<Add_Event> createState() => _Add_EventState();
 }
 
-class _TeacherRegState extends State<TeacherReg> {
-  final Valid = GlobalKey<FormState>();
-  var name = TextEditingController();
-  var department = TextEditingController();
-  var phone = TextEditingController();
-  var email = TextEditingController();
-  var pass = TextEditingController();
-
+class _Add_EventState extends State<Add_Event> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Registration',
+            "Event",
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            )),
+                textStyle:
+                    TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
           ),
         ),
       ),
-      body: SafeArea(
-          child: Form(
-        key: Valid,
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 40),
+              padding: const EdgeInsets.only(top: 30, left: 30),
               child: Row(
                 children: [
                   Text(
-                    "Name",
+                    "Event Name",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18, fontWeight: FontWeight.w500)),
                   )
                 ],
               ),
@@ -60,23 +49,21 @@ class _TeacherRegState extends State<TeacherReg> {
                   width: 350,
                   height: 40,
                   child: TextFormField(
-                    controller: name,
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 1))),
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 40),
+              padding: const EdgeInsets.only(top: 30, left: 30),
               child: Row(
                 children: [
                   Text(
-                    "Department",
+                    "Date",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18, fontWeight: FontWeight.w500)),
                   )
                 ],
               ),
@@ -88,22 +75,21 @@ class _TeacherRegState extends State<TeacherReg> {
                   width: 350,
                   height: 40,
                   child: TextFormField(
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 1))),
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 40),
+              padding: const EdgeInsets.only(top: 30, left: 30),
               child: Row(
                 children: [
                   Text(
-                    "Phone No",
+                    "Time",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18, fontWeight: FontWeight.w500)),
                   )
                 ],
               ),
@@ -115,22 +101,21 @@ class _TeacherRegState extends State<TeacherReg> {
                   width: 350,
                   height: 40,
                   child: TextFormField(
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 1))),
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 40),
+              padding: const EdgeInsets.only(top: 30, left: 30),
               child: Row(
                 children: [
                   Text(
-                    "Email",
+                    "Location",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18, fontWeight: FontWeight.w500)),
                   )
                 ],
               ),
@@ -142,22 +127,21 @@ class _TeacherRegState extends State<TeacherReg> {
                   width: 350,
                   height: 40,
                   child: TextFormField(
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 1))),
+                    decoration:
+                        InputDecoration(enabledBorder: OutlineInputBorder()),
                   ),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 40),
+              padding: const EdgeInsets.only(top: 30, left: 30),
               child: Row(
                 children: [
                   Text(
-                    "Password",
+                    "Discription",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
+                            fontSize: 18, fontWeight: FontWeight.w500)),
                   )
                 ],
               ),
@@ -166,49 +150,49 @@ class _TeacherRegState extends State<TeacherReg> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
+                  height: 150,
                   width: 350,
-                  height: 40,
                   child: TextFormField(
+                    maxLines: 5,
                     decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 1))),
+                        enabledBorder: OutlineInputBorder()
+                        ),
                   ),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 130),
+              padding: const EdgeInsets.only(top: 100),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Tabbar(),
-                          ));
+                      Navigator.pop(context);
                     },
                     child: Container(
-                      width: 380,
+                      width: 350,
                       height: 50,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color(0xffb4472B2)),
+                          color: Color(0xffb4472B2),
+                          borderRadius: BorderRadius.circular(10)),
                       child: Center(
-                          child: Text("Submit",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold))),
+                          child: Text(
+                        "Submit",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: Colors.white
+                        ),
+                      )),
                     ),
-                  ),
+                  )
                 ],
               ),
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

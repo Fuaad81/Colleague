@@ -1,5 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
+import 'package:events/teacher/addevent.dart';
+import 'package:events/teacher/food.dart';
 import 'package:flutter/material.dart';
 
 class Upcoming extends StatefulWidget {
@@ -13,27 +15,38 @@ class _UpcomingState extends State<Upcoming> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Column(
+      body: SafeArea(
+          child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 380,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 25,left: 50),
-                    child: Text('Food Festival',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
-                    ),),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Food_festival(),
+                        ));
+                  },
+                  child: Container(
+                    width: 380,
+                    height: 70,
+                    decoration: BoxDecoration(
+                        color: Color(0xffb4472B2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 25, left: 50),
+                      child: Text(
+                        'Food Festival',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -48,21 +61,23 @@ class _UpcomingState extends State<Upcoming> {
                   width: 380,
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
+                      color: Color(0xffb4472B2),
+                      borderRadius: BorderRadius.circular(10)),
                   child: Padding(
-                    padding: EdgeInsets.only(top: 25,left: 50),
-                    child: Text('Chrismas',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
-                    ),),
+                    padding: EdgeInsets.only(top: 25, left: 50),
+                    child: Text(
+                      'Chrismas',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ],
             ),
-          ),Padding(
+          ),
+          Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,21 +86,51 @@ class _UpcomingState extends State<Upcoming> {
                   width: 380,
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
+                      color: Color(0xffb4472B2),
+                      borderRadius: BorderRadius.circular(10)),
                   child: Padding(
-                    padding: EdgeInsets.only(top: 25,left: 50),
-                    child: Text('Music Festival',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600
-                    ),),
+                    padding: EdgeInsets.only(top: 25, left: 50),
+                    child: Text(
+                      'Music Festival',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 320),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Add_Event(),
+                        ));
+                  },
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        color: Color(0xffb4472B2),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       )),
     );
