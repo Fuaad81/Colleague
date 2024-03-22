@@ -1,6 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:events/splash.dart';
+import 'package:events/student/student_reg.dart';
+import 'package:events/teacher/studentlist.dart';
 import 'package:events/teacher/teacher_reg.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TeacherReg(),
+      home: const Student_Reg(),
     );
   }
 }
