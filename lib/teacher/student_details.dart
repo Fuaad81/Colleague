@@ -55,20 +55,20 @@ class _Student_detailsState extends State<Student_details> {
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text("Rgister no  :  ",
+                  Text("Rgister no :",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),),
-                  Text(" 00000",
+                  Text("00000",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),)
                 ],
@@ -77,77 +77,110 @@ class _Student_detailsState extends State<Student_details> {
             Padding(
               padding: const EdgeInsets.only(top: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text("Department  :  ",
+                  Text("Department :",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),),
-                  Text(" BCOM",
+                  Text("BCOM",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),)
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30,left: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text("Phone no  :  ",
+                  Text("Phone no :",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),),
-                  Text(" 1234567890",
+                  Text("1234567890",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),)
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30,left: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Email  :  ",
+                  Text("Email :",
                   style: GoogleFonts.poppins(
                     textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
                     )
                   ),),
-                  Text("abcd@gmail.com",
-                  style: GoogleFonts.poppins(
-                    textStyle:TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
-                    )
-                  ),)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Text("abcd@gmail.com",
+                    style: GoogleFonts.poppins(
+                      textStyle:TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400
+                      )
+                    ),),
+                  )
                 ],
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: 250,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Color(0xffb4472B2)
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 270),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 180,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0xffb4466B2),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Center(child: Text("Accept",
+                  style: GoogleFonts.poppins(
+                    textStyle:TextStyle(
+                      fontSize: 19,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500
+                    )
+                  ),),),
+                  ),
+                  Container(
+                    width: 180,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0xffb4466B2),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                     child: Center(child: Text("Reject",
+                  style: GoogleFonts.poppins(
+                    textStyle:TextStyle(
+                      fontSize: 19,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500
+                    )
+                  ),),),
+                  ),
+                ],
               ),
             )
           ],

@@ -18,21 +18,16 @@ class _OnamState extends State<Onam> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: SafeArea(
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(child: Text("Details",style: TextStyle(
+        appBar: AppBar(
+          title: Text("Details",style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                   color: Color(0xffb4472B2)
-                ),),),
-                ],
-              ),
-            ),
+                ),),
+                centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Column(children: [
             Padding(
               padding: const EdgeInsets.only(top: 30),
               child: TabBar(
@@ -41,8 +36,9 @@ class _OnamState extends State<Onam> {
                   fontWeight: FontWeight.w500,
                   color: Color(0xffb4472B2)
                 ),
+                dividerColor: Colors.white,
                 indicatorColor: Color(0xffb4472B2),
-                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorSize: TabBarIndicatorSize.label,
                 isScrollable: true,
                 tabAlignment: TabAlignment.start,
                 tabs: [

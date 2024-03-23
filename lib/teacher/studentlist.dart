@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
 import 'package:events/teacher/student_details.dart';
+import 'package:events/teacher/teacher_notification.dart';
+import 'package:events/teacher/teacher_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,19 +30,31 @@ class _Student_ListState extends State<Student_List> {
                   'Student List',
                   style: GoogleFonts.poppins(
                       textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 45),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Teacher_Profile(),
+                            ));
+                      },
                       icon: Icon(
                         Icons.person_3_outlined,
                         size: 30,
                       )),
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {                      
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Teacher_Notification(),
+                            ));
+                    },
                     icon: Icon(Icons.notifications_active_outlined, size: 30))
               ],
             ),
@@ -64,7 +78,7 @@ class _Student_ListState extends State<Student_List> {
                       height: 70,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Colors.blue[100]),
+                          color: Color(0xffb4466b2).withOpacity(0.1)),
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage("images/avatar.jpg"),

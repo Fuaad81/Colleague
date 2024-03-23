@@ -1,24 +1,29 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
+import 'package:events/student/detail_reg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Details extends StatefulWidget {
-  const Details({super.key});
+class Food_Details extends StatefulWidget {
+  const Food_Details({super.key});
 
   @override
-  State<Details> createState() => _DetailsState();
+  State<Food_Details> createState() => _Food_DetailsState();
 }
 
-class _DetailsState extends State<Details> {
+class _Food_DetailsState extends State<Food_Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Details"),
+        centerTitle: true,
+      ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -26,7 +31,7 @@ class _DetailsState extends State<Details> {
                   width: 380,
                   height: 110,
                   decoration: BoxDecoration(
-                      color: Color(0xffb4472B2).withOpacity(0.2),
+                      color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +39,7 @@ class _DetailsState extends State<Details> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8, left: 8),
                         child: Text(
-                          "Onam Festival",
+                          "Food Festival",
                           style: TextStyle(
                               fontSize: 18,
                               color: Color(0xffb4472B2),
@@ -120,7 +125,7 @@ class _DetailsState extends State<Details> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 40, left: 20),
+            padding: const EdgeInsets.only(top: 30, left: 20),
             child: Row(
               children: [
                 Text(
@@ -135,13 +140,13 @@ class _DetailsState extends State<Details> {
               itemCount: 6,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+                  padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
                   child: Container(
-                    width: 300,
+                    width: 280,
                     height: 70,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffb4472B2).withOpacity(0.2)),
+                        color: Color(0xffb4466b2).withOpacity(0.2)),
                     child: ListTile(
                       leading: CircleAvatar(
                         radius: 25,
@@ -150,20 +155,46 @@ class _DetailsState extends State<Details> {
                       title: Text(
                         "Student Name",
                         style: GoogleFonts.poppins(
-                          textStyle:TextStyle(
-                            fontWeight: FontWeight.w500
-                          )
-                        ),
+                            textStyle: TextStyle(fontWeight: FontWeight.w500)),
                       ),
                       subtitle: Text("Department"),
-                      trailing: Icon(
-                        CupertinoIcons.clear_circled_solid,
-                        color: Colors.blue,
-                        size: 30,),
-                      ),
                     ),
+                  ),
                 );
               },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Detail_Reg(),
+                        ));
+                  },
+                  child: Container(
+                    width: 350,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Color(0xffb5566b2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                      child: Text(
+                        "Register",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           )
         ],

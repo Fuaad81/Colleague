@@ -1,6 +1,7 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors
 
-import 'package:flutter/cupertino.dart';
+import 'package:events/student/bottom_tabbar.dart';
+import 'package:events/student/sd_event.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,7 +55,6 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
-                      
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -102,7 +102,6 @@ class _Student_RegState extends State<Student_Reg> {
                   ],
                 ),
               ),
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -204,7 +203,13 @@ class _Student_RegState extends State<Student_Reg> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Sd_Event_tab(),
+                            ));
+                      },
                       child: Container(
                         width: 380,
                         height: 50,
