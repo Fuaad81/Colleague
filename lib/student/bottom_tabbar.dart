@@ -1,8 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:events/start.dart';
 import 'package:events/student/request.dart';
-import 'package:events/student/sd_event.dart';
 import 'package:events/student/upcoming.dart';
 import 'package:flutter/material.dart';
 

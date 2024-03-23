@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors
 
-import 'package:events/student/bottom_tabbar.dart';
 import 'package:events/student/sd_event.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
