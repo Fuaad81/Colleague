@@ -1,9 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:events/student/sd_login.dart';
-import 'package:events/student/student_reg.dart';
 import 'package:events/teacher/teacher_login.dart';
-import 'package:events/teacher/teacher_reg.dart';
 import 'package:flutter/material.dart';
 
 class Start_Page extends StatefulWidget {

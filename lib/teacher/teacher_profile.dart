@@ -1,6 +1,5 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Teacher_Profile extends StatefulWidget {

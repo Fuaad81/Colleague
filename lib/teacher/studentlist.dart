@@ -4,7 +4,6 @@ import 'package:events/teacher/student_details.dart';
 import 'package:events/teacher/teacher_notification.dart';
 import 'package:events/teacher/teacher_profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Student_List extends StatefulWidget {

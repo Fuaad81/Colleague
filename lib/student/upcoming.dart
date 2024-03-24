@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types
+// ignore_for_file: prefer_const_constructors, camel_case_types, use_full_hex_values_for_flutter_colors
 
 import 'package:events/student/food_details.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Sd_Upcoming extends StatefulWidget {

@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
-import 'package:events/student/student_reg.dart';
 import 'package:events/teacher/teacher_reg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

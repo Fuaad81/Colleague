@@ -1,10 +1,9 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
 import 'package:events/student/bottom_tabbar.dart';
 import 'package:events/student/event_notification.dart';
 import 'package:events/student/event_profile_edit.dart';
 import 'package:events/student/request.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Sd_Event_tab extends StatefulWidget {
