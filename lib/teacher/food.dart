@@ -29,7 +29,7 @@ class _Food_festivalState extends State<Food_festival> {
                 width: 380,
                 height: 110,
                 decoration: BoxDecoration(
-                    color: Colors.blue[200],
+                    color: Color(0xffb4466b2).withOpacity(0.2),
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class _Food_festivalState extends State<Food_festival> {
                         "Onam Festival",
                         style: TextStyle(
                             fontSize: 18,
-                            color: Color(0xffb4472B2).withOpacity(0.2),
+                            color: Color(0xffb4472B2),
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -143,7 +143,7 @@ class _Food_festivalState extends State<Food_festival> {
                     height: 70,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.blue[100]),
+                        color: Color(0xffb4466b2).withOpacity(0.2)),
                     child: ListTile(
                       leading: CircleAvatar(
                         radius: 25,
