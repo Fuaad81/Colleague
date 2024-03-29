@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:events/admin/admin_login.dart';
 import 'package:events/student/sd_login.dart';
 import 'package:events/teacher/teacher_login.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,13 @@ class _Start_PageState extends State<Start_Page> {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Admin_Login(),
+                            ));
+                    },
                     child: Container(
                       width: 200,
                       height: 50,

@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:events/student/onam_fest_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -58,11 +59,16 @@ class _Add_ImageState extends State<Add_Image> {
                               image = File(pick!.path);
                             });
                           },
-                          icon: Image.asset(
-                            "images/add-image.png",
-                            color: Color(0xffb4466b2).withOpacity(0.4),
-                            width: 200,
-                          )),
+                          icon: image == null
+                              ? Image.asset(
+                                  "images/add-image.png",
+                                  color: Color(0xffb4466b2).withOpacity(0.4),
+                                  width: 200,
+                                )
+                              : Image.file(
+                                  image!,
+                                  fit: BoxFit.cover,
+                                )),
                     ),
                   ),
                 ],
@@ -97,6 +103,37 @@ class _Add_ImageState extends State<Add_Image> {
               ),
             ],
           ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child:
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center, children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Onam_Fest_Photo(),));
+                  },
+                  child: Container(
+                    width: 370,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Color(0xffb4466b2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                        child: Text(
+                      "Send",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                )
+              ]),
+            ),
+          )
         ],
       ),
     );

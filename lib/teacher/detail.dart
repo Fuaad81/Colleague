@@ -156,14 +156,10 @@ class _DetailsState extends State<Details> {
                         ),
                       ),
                       subtitle: Text("Department"),
-                      trailing: Row(
-                        children: [
-                          Icon(
-                            CupertinoIcons.clear_circled_solid,
-                            color: Colors.blue,
-                            size: 30,),
-                        ],
-                      ),
+                      trailing: Icon(
+                        CupertinoIcons.clear_circled_solid,
+                        color: Colors.blue,
+                        size: 30,),
                       ),
                     ),
                 );

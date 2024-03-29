@@ -4,14 +4,14 @@ import 'package:events/teacher/previous.dart';
 import 'package:events/teacher/upcoming.dart';
 import 'package:flutter/material.dart';
 
-class Tabbar1 extends StatefulWidget {
-  const Tabbar1({super.key});
+class Tabbar2 extends StatefulWidget {
+  const Tabbar2({super.key});
 
   @override
-  State<Tabbar1> createState() => _Tabbar1State();
+  State<Tabbar2> createState() => _Tabbar2State();
 }
 
-class _Tabbar1State extends State<Tabbar1> {
+class _Tabbar2State extends State<Tabbar2> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

@@ -200,7 +200,73 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
                 )
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 370,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Color(0xffb4466b2).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("images/avatar.jpg"),
+                    ),
+                    title: Text("Student Name"),
+                    subtitle: Text("Department"),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 370,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Color(0xffb4466b2).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("images/avatar.jpg"),
+                    ),
+                    title: Text("Student Name"),
+                    subtitle: Text("Department"),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 370,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Color(0xffb4466b2).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("images/avatar.jpg"),
+                    ),
+                    title: Text("Student Name"),
+                    subtitle: Text("Department"),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

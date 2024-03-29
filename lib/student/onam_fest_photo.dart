@@ -17,6 +17,10 @@ class _Onam_Fest_PhotoState extends State<Onam_Fest_Photo> {
     return Scaffold(
       body: Stack(
         children: [
+          GridView.count(
+            crossAxisCount:2,
+            children: [],
+            ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

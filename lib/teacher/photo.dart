@@ -1,4 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
 
 class Photo extends StatefulWidget {
   const Photo({super.key});
@@ -10,6 +12,8 @@ class Photo extends StatefulWidget {
 class _PhotoState extends State<Photo> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      
+    );
   }
 }

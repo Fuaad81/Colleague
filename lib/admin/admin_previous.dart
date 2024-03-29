@@ -1,0 +1,237 @@
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class Admin_Previous extends StatefulWidget {
+  const Admin_Previous({super.key});
+
+  @override
+  State<Admin_Previous> createState() => _Admin_PreviousState();
+}
+
+class _Admin_PreviousState extends State<Admin_Previous> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 360,
+                  height: 130,
+                  decoration: BoxDecoration(
+                      color: Color(0xffb4466b2).withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 10),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Onam Festival",
+                              style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                      color: Color(0xffb4466b2),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Date",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                                Text("Time",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                                Text("Location",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Column(
+                                children: [
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("08/28/2023",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text("9:00",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text("Collage Ground",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 360,
+                  height: 130,
+                  decoration: BoxDecoration(
+                      color: Color(0xffb4466b2).withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 10),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Onam Festival",
+                              style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                      color: Color(0xffb4466b2),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Date",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                                Text("Time",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                                Text("Location",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      fontSize: 16,
+                                    ))),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Column(
+                                children: [
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text(":",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("08/28/2023",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text("9:00",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                  Text("Collage Ground",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        fontSize: 16,
+                                      ))),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

@@ -4,14 +4,14 @@ import 'package:events/teacher/studentlist.dart';
 import 'package:events/teacher/tabbar1.dart';
 import 'package:flutter/material.dart';
 
-class Tabbar extends StatefulWidget {
-  const Tabbar({super.key});
+class Tabbar1 extends StatefulWidget {
+  const Tabbar1({super.key});
 
   @override
-  State<Tabbar> createState() => _TabbarState();
+  State<Tabbar1> createState() => _Tabbar1State();
 }
 
-class _TabbarState extends State<Tabbar> {
+class _Tabbar1State extends State<Tabbar1> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -22,7 +22,7 @@ class _TabbarState extends State<Tabbar> {
             Column(
               children: [
                 Expanded(
-                  child: TabBarView(children: [Student_List(), Tabbar1()]),
+                  child: TabBarView(children: [Student_List(), Tabbar2()]),
                 ),
               ],
             ),
