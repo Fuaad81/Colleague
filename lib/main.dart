@@ -1,12 +1,16 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
+import 'package:events/firebase_options.dart';
 import 'package:events/splash.dart';
 import 'package:events/student/student_reg.dart';
 import 'package:events/teacher/studentlist.dart';
 import 'package:events/teacher/teacher_reg.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   runApp(const MyApp());
 }
 
