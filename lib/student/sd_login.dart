@@ -1,10 +1,13 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, non_constant_identifier_names
+// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, non_constant_identifier_names, unnecessary_null_comparison, avoid_print, use_build_context_synchronously
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:events/student/sd_event.dart';
 import 'package:events/student/student_reg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class St_login extends StatefulWidget {
   const St_login({super.key});
@@ -14,131 +17,159 @@ class St_login extends StatefulWidget {
 }
 
 class _St_loginState extends State<St_login> {
+  final valid = GlobalKey<FormState>();
+  var email = TextEditingController();
+  var password = TextEditingController();
+
+  Future<void> savedata(String data) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('studentId', data);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-              children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          CustomPaint(
-            size: Size(380,
-                380), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-            painter: RPSCustomPainter(),
-          ),
-        ],
-      ),
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: [
-            Text("Sign in",
-                style: GoogleFonts.poppins(
-                  textStyle:
-                      TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
-                ))
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: [
-            Text("Sign into your account",
-                style: GoogleFonts.poppins(
-                  textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                ))
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 350,
-              height: 50,
-              child: TextFormField(
-                decoration: InputDecoration(hintText: "Email Address"),
+      body: SingleChildScrollView(
+        child: Form(
+          key: valid,
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomPaint(
+                    size: Size(380,
+                        380), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                    painter: RPSCustomPainter(),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 350,
-              height: 50,
-              child: TextFormField(
-                decoration: InputDecoration(hintText: "Password"),
-              ),
-            ),
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 40),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 350,
-              height: 50,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 68, 102, 178),
-                  borderRadius: BorderRadius.circular(8)),
-              child: Center(
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                      fontSize: 19,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
                   children: [
-                    Text(
-                      "Don't have an account?",
-                      style: TextStyle(
-                          fontSize: 17, fontWeight: FontWeight.w400),
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context, MaterialPageRoute(
-                              builder: (context) => Student_Reg(),));
-                        },
-                        child: Text("Sign up", style: GoogleFonts.poppins(
+                    Text("Sign in",
+                        style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                  fontSize: 17,
-                  color: Color.fromARGB(255, 68, 102, 178),
-                  fontWeight: FontWeight.w400
-                ),
-                        )))
+                              fontSize: 30, fontWeight: FontWeight.w500),
+                        ))
                   ],
-                )
-          ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  children: [
+                    Text("Sign into your account",
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        ))
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 350,
+                      height: 50,
+                      child: TextFormField(
+                        controller: email,
+                        decoration: InputDecoration(hintText: "Email Address"),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 350,
+                      height: 50,
+                      child: TextFormField(
+                        controller: password,
+                        decoration: InputDecoration(hintText: "Password"),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () async {
+                          if (valid.currentState!.validate()) {
+                            String usermail = email.text.trim();
+                            String userpass = password.text.trim();
+                            var querysnapshot = await FirebaseFirestore.instance
+                                .collection("student_rg")
+                                .where("email", isEqualTo: usermail)
+                                .limit(1)
+                                .get();
+                            if (querysnapshot.docs.isNotEmpty) {
+                              var userdata = querysnapshot.docs.first.data();
+                              if (userdata != null &&
+                                  userdata["pass"] == userpass) {
+                                await savedata(userdata["data"] ?? '');
+                                print("Login Success");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Sd_Event_tab(),
+                                    ));
+                              }
+                            }
+                          }
+                        },
+                        child: Text("Login"))
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Don't have an account?",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w400),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Student_Reg(),
+                                  ));
+                            },
+                            child: Text("Sign up",
+                                style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                      fontSize: 17,
+                                      color: Color.fromARGB(255, 68, 102, 178),
+                                      fontWeight: FontWeight.w400),
+                                )))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-              ],
-            ),
     );
   }
 }

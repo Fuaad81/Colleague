@@ -1,7 +1,10 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors
+// ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors, avoid_print, non_constant_identifier_names, unused_local_variable, use_build_context_synchronously
 
-import 'package:events/student/sd_event.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:events/student/sd_login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Student_Reg extends StatefulWidget {
@@ -13,6 +16,47 @@ class Student_Reg extends StatefulWidget {
 
 class _Student_RegState extends State<Student_Reg> {
   final valid = GlobalKey<FormState>();
+
+  TextEditingController name = TextEditingController();
+  TextEditingController department = TextEditingController();
+  TextEditingController reg_no = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController pass= TextEditingController();
+
+    Future<void> Checking() async {
+    if (valid.currentState!.validate()) {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+                email: email.text, password: pass.text);
+        String uid = userCredential.user!.uid;
+        await FirebaseFirestore.instance.collection("student_rg").add({
+          'name': name.text,
+          'department': department.text,
+          'reg_no' : reg_no.text,
+          'phone': phone.text,
+          'email': email.text,
+          'pass': pass.text,
+        });
+        Navigator.push(
+          context, MaterialPageRoute(builder: (context) => St_login(),));
+      }catch(e){
+        print('Unexpected error during registration: $e');
+        Fluttertoast.showToast(
+          msg: "Unexpected error during registration.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0,
+        );
+
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +98,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: name,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -81,6 +126,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: department,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -108,6 +154,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: reg_no,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -135,6 +182,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: phone,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -162,6 +210,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: email,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -189,6 +238,7 @@ class _Student_RegState extends State<Student_Reg> {
                     width: 350,
                     height: 40,
                     child: TextFormField(
+                      controller: pass,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 1))),
@@ -201,28 +251,23 @@ class _Student_RegState extends State<Student_Reg> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Sd_Event_tab(),
-                            ));
+                    ElevatedButton(
+                      onPressed: (){
+                        print("Login Success");
+                        Checking();
                       },
-                      child: Container(
-                        width: 380,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffb4472B2)),
-                        child: Center(
-                            child: Text("Submit",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold))),
+                      style: ButtonStyle(
+                        fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                        backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                        foregroundColor: MaterialStatePropertyAll(Colors.white),
+                        textStyle: MaterialStatePropertyAll(GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                          )
+                        ))
                       ),
-                    ),
+                       child: Text("Button"))
                   ],
                 ),
               )

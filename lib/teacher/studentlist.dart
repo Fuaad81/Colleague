@@ -58,40 +58,7 @@ class _Student_ListState extends State<Student_List> {
               ],
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Student_details(),
-                          ));
-                    },
-                    child: Container(
-                      width: 200,
-                      height: 70,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffb4466b2).withOpacity(0.1)),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage("images/avatar.jpg"),
-                          radius: 25,
-                        ),
-                        title: Text('Student Name'),
-                        subtitle: Text('Department'),
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          )
+          
         ],
       )),
     );

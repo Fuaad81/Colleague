@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches, use_build_context_synchronously, avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:events/teacher/studentlist.dart';
@@ -6,6 +6,7 @@ import 'package:events/teacher/tabbar.dart';
 import 'package:events/teacher/teacher_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TeacherReg extends StatefulWidget {
@@ -39,8 +40,18 @@ class _TeacherRegState extends State<TeacherReg> {
         });
         Navigator.push(
           context, MaterialPageRoute(builder: (context) => Teacher_login(),));
-      }on FirebaseAuthException catch(e){
-        print(e);
+      }catch(e){
+        print('Unexpected error during registration: $e');
+        Fluttertoast.showToast(
+          msg: "Unexpected error during registration.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0,
+        );
+
       }
     }
   }

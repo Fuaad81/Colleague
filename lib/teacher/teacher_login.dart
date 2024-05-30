@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, use_build_context_synchronously, unnecessary_null_comparison, avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:events/teacher/tabbar.dart';
@@ -36,8 +36,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomPaint(
-                    size: Size(380,
-                        380), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                    size: Size(380, 380),
                     painter: RPSCustomPainter(),
                   ),
                 ],
@@ -103,18 +102,6 @@ class _Teacher_loginState extends State<Teacher_login> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Container(
-                    //   width: 350,
-                    //   height: 50,
-                    //   decoration: BoxDecoration(
-                    //       color: Color.fromARGB(255, 68, 102, 178),
-                    //       borderRadius: BorderRadius.circular(8)),
-                    //   child: Center(
-                    //     child: Text(
-                    //       "Login",
-                    //     ),
-                    //   ),
-                    // )
                     ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor:
@@ -128,18 +115,24 @@ class _Teacher_loginState extends State<Teacher_login> {
                             String userpass = password.text.trim();
                             var querysnapshot = await FirebaseFirestore.instance
                                 .collection("teacher_rg")
-                                .where("email", isEqualTo: useremail).limit(1).get();
+                                .where("email", isEqualTo: useremail)
+                                .limit(1)
+                                .get();
                             if (querysnapshot.docs.isNotEmpty) {
                               var userdata = querysnapshot.docs.first.data();
-                              if (userdata["pass"] == userpass) {
-                                await _datasaving(userdata["data"]);
+                              if (userdata != null &&
+                                  userdata["pass"] == userpass) {
+                                await _datasaving(userdata["data"] ?? '');
+                                print("Login Succes");
 
                                 Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => Tabbar1(),));
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Tabbar1(),
+                                    ));
                               }
                             }
                           }
-                          
                         },
                         child: Text("Login",
                             style: TextStyle(

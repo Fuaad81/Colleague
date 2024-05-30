@@ -1,17 +1,29 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
-import 'package:events/teacher/reacher_addprof.dart';
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class Teacher_Profile extends StatefulWidget {
-  const Teacher_Profile({super.key});
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class teacher_add_Prof extends StatefulWidget {
+  const teacher_add_Prof({super.key});
 
   @override
-  State<Teacher_Profile> createState() => _Teacher_ProfileState();
+  State<teacher_add_Prof> createState() => _teacher_add_ProfState();
 }
 
-class _Teacher_ProfileState extends State<Teacher_Profile> {
-  
+class _teacher_add_ProfState extends State<teacher_add_Prof> {
+  XFile? pick;
+  File? image;
+
+  Future<void> _pickImage() async {
+    ImagePicker picked = ImagePicker();
+    pick = await picked.pickImage(source: ImageSource.gallery);
+    setState(() {
+      image = File(pick!.path);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +41,34 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage("images/avatar.jpg"),
-                )
+                InkWell(
+                    onTap: () {
+                      _pickImage();
+                    },
+                    // child: ClipRRect(
+                      
+                    //   borderRadius: BorderRadius.circular(150),
+                    //   child: image == null
+                    //       ? Image.asset(
+                    //           "images/avatar.jpg",
+                    //           width: 100,
+                    //         )
+                    //       : Image.file(
+                    //           image!,
+                    //           width: 130,
+                    //           height: 130,
+                    //         ),
+                    // )
+                    child: CircleAvatar(
+                    radius: 50,
+                      
+                    ),
+                    )
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20, left: 30),
+            padding: EdgeInsets.only(top: 10, left: 30),
             child: Row(
               children: [
                 Text(
@@ -54,11 +85,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 width: 360,
                 height: 50,
                 child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -81,11 +109,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 width: 360,
                 height: 50,
                 child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -108,11 +133,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 width: 360,
                 height: 50,
                 child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -135,11 +157,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 width: 360,
                 height: 50,
                 child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -147,44 +166,25 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
           Padding(
             padding: const EdgeInsets.only(top: 120),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap:() {
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.red),
-                            child: Center(
-                                child: Text("Cancel",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold))),
-                          ),
-                ),
-                InkWell(
-                  onTap:() {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => teacher_add_Prof(),));
-                  },
-                  child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Color(0xffb4472B2)),
-                            child: Center(
-                                child: Text("Edit",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold))),
-                          ),
+                    width: 380,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffb4472B2)),
+                    child: Center(
+                        child: Text("Submit",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold))),
+                  ),
                 ),
               ],
             ),
