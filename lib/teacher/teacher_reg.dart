@@ -30,17 +30,24 @@ class _TeacherRegState extends State<TeacherReg> {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(
                 email: email.text, password: pass.text);
-        String uid = userCredential.user!.uid;
-        await FirebaseFirestore.instance.collection("teacher_rg").add({
+        String teacheruid = userCredential.user!.uid;
+        await FirebaseFirestore.instance
+            .collection("teacher_rg")
+            .doc(teacheruid)
+            .set({
           'name': name.text,
           'department': department.text,
           'phone': phone.text,
           'email': email.text,
           'pass': pass.text,
+          "teacherid": teacheruid
         });
         Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Teacher_login(),));
-      }catch(e){
+            context,
+            MaterialPageRoute(
+              builder: (context) => Teacher_login(),
+            ));
+      } catch (e) {
         print('Unexpected error during registration: $e');
         Fluttertoast.showToast(
           msg: "Unexpected error during registration.",
@@ -51,7 +58,6 @@ class _TeacherRegState extends State<TeacherReg> {
           textColor: Colors.white,
           fontSize: 16.0,
         );
-
       }
     }
   }

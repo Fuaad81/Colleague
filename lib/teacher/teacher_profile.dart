@@ -1,7 +1,9 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors, empty_catches, unnecessary_null_in_if_null_operators, avoid_print
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:events/teacher/reacher_addprof.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Teacher_Profile extends StatefulWidget {
   const Teacher_Profile({super.key});
@@ -11,185 +13,195 @@ class Teacher_Profile extends StatefulWidget {
 }
 
 class _Teacher_ProfileState extends State<Teacher_Profile> {
-  
+  var name = TextEditingController();
+  var department = TextEditingController();
+  var phone = TextEditingController();
+  var email = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    super.initState();
+    getTeacherDetails();
+  }
+
+  Future<void> getTeacherDetails() async {
+    try {
+      SharedPreferences teacher = await SharedPreferences.getInstance();
+      String? tid = teacher.getString("teacherId");
+      print("$tid");
+
+      if (tid!.isNotEmpty) {
+        Stream<DocumentSnapshot> teacherstreem = FirebaseFirestore.instance
+            .collection("teacher_rg")
+            .doc(tid)
+            .snapshots();
+
+        teacherstreem.listen((teachersnapshot) {
+          if (teachersnapshot.exists) {
+            setState(() {
+              name.text = teachersnapshot["name"] ?? '';
+              department.text = teachersnapshot["department"] ?? '';
+              phone.text = teachersnapshot["phone"] ?? '';
+              email.text = teachersnapshot["email"] ?? '';
+            });
+          }
+        });
+      }
+    } catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Profile",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
-      ),
-      body: Column(
-        children: [
+        actions: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage("images/avatar.jpg"),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 20, left: 30),
-            child: Row(
-              children: [
-                Text(
-                  "Name",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 360,
-                height: 50,
-                child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 15, left: 30),
-            child: Row(
-              children: [
-                Text(
-                  "Department",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 360,
-                height: 50,
-                child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 15, left: 30),
-            child: Row(
-              children: [
-                Text(
-                  "Phone no",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 360,
-                height: 50,
-                child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 15, left: 30),
-            child: Row(
-              children: [
-                Text(
-                  "Email",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 360,
-                height: 50,
-                child: TextFormField(
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(),
-                    focusedBorder: UnderlineInputBorder()
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 120),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap:() {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.red),
-                            child: Center(
-                                child: Text("Cancel",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold))),
-                          ),
-                ),
-                InkWell(
-                  onTap:() {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => teacher_add_Prof(),));
-                  },
-                  child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Color(0xffb4472B2)),
-                            child: Center(
-                                child: Text("Edit",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold))),
-                          ),
-                ),
-              ],
-            ),
+            padding: const EdgeInsets.only(right: 20),
+            child: IconButton(onPressed: (){
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => teacher_add_Prof(),));
+            }, icon: Icon(Icons.mode_edit_outlined,size: 30)),
           )
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formkey,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage("images/avatar.jpg"),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 30),
+                child: Row(
+                  children: [
+                    Text(
+                      "Name",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 360,
+                    height: 50,
+                    child: TextFormField(
+                      controller: name,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 15, left: 30),
+                child: Row(
+                  children: [
+                    Text(
+                      "Department",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 360,
+                    height: 50,
+                    child: TextFormField(
+                      controller: department,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 15, left: 30),
+                child: Row(
+                  children: [
+                    Text(
+                      "Phone no",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 360,
+                    height: 50,
+                    child: TextFormField(
+                      controller: phone,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 15, left: 30),
+                child: Row(
+                  children: [
+                    Text(
+                      "Email",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 360,
+                    height: 50,
+                    child: TextFormField(
+                      controller: email,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

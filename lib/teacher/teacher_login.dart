@@ -122,7 +122,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                               var userdata = querysnapshot.docs.first.data();
                               if (userdata != null &&
                                   userdata["pass"] == userpass) {
-                                await _datasaving(userdata["data"] ?? '');
+                                await _datasaving(userdata["teacherid"] ?? '');
                                 print("Login Succes");
 
                                 Navigator.push(
