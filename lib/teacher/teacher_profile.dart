@@ -17,6 +17,7 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
   var department = TextEditingController();
   var phone = TextEditingController();
   var email = TextEditingController();
+  String? imageurl;
   final _formkey = GlobalKey<FormState>();
 
   @override
@@ -44,6 +45,7 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
               department.text = teachersnapshot["department"] ?? '';
               phone.text = teachersnapshot["phone"] ?? '';
               email.text = teachersnapshot["email"] ?? '';
+              imageurl = teachersnapshot["image_url"] ?? '';
             });
           }
         });
@@ -82,7 +84,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundImage: AssetImage("images/avatar.jpg"),
+                      backgroundImage: imageurl != null && imageurl!.isNotEmpty ? NetworkImage(imageurl!) : null,
+                      child: imageurl == null || imageurl!.isEmpty ? Image.asset("images/avatar.jpg"):null,
                     )
                   ],
                 ),

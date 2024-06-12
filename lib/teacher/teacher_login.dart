@@ -26,6 +26,9 @@ class _Teacher_loginState extends State<Teacher_login> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Form(
@@ -36,7 +39,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomPaint(
-                    size: Size(380, 380),
+                    size: Size(width/1, height/2.5),
                     painter: RPSCustomPainter(),
                   ),
                 ],
@@ -71,8 +74,8 @@ class _Teacher_loginState extends State<Teacher_login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: width/1.2,
+                      height: height/16,
                       child: TextFormField(
                         controller: email,
                         decoration: InputDecoration(hintText: "Email Address"),
@@ -87,8 +90,8 @@ class _Teacher_loginState extends State<Teacher_login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: width/1.2,
+                      height: height/16,
                       child: TextFormField(
                         controller: password,
                         decoration: InputDecoration(hintText: "Password"),
@@ -108,7 +111,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                                 MaterialStatePropertyAll(Colors.blue),
                             foregroundColor:
                                 MaterialStatePropertyAll(Colors.white),
-                            fixedSize: MaterialStatePropertyAll(Size(350, 50))),
+                            fixedSize: MaterialStatePropertyAll(Size(width/1.2, height/16))),
                         onPressed: () async {
                           if (validation.currentState!.validate()) {
                             String useremail = email.text.trim();

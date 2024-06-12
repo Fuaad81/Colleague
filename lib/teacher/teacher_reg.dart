@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches, use_build_context_synchronously, avoid_print
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches, use_build_context_synchronously, avoid_print, prefer_typing_uninitialized_variables
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:events/teacher/studentlist.dart';
@@ -64,6 +64,9 @@ class _TeacherRegState extends State<TeacherReg> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -100,8 +103,8 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width /1.2,
+                    height: height / 16,
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -134,8 +137,8 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width /1.2,
+                    height: height / 16,
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -168,8 +171,8 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width /1.2,
+                    height: height / 16,
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -202,8 +205,8 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width /1.2,
+                    height: height / 16,
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -236,8 +239,8 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width /1.2,
+                    height: height / 16,
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -254,15 +257,15 @@ class _TeacherRegState extends State<TeacherReg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 130),
+                padding: const EdgeInsets.only(top: 100),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
                       onTap: () => Checking(),
                       child: Container(
-                        width: 380,
-                        height: 50,
+                        width: width/1.2,
+                        height: height / 16,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffb4472B2)),
@@ -277,6 +280,7 @@ class _TeacherRegState extends State<TeacherReg> {
                   ],
                 ),
               )
+              
             ],
           ),
         ),

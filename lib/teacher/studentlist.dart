@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
 
-import 'package:events/teacher/student_details.dart';
 import 'package:events/teacher/teacher_notification.dart';
 import 'package:events/teacher/teacher_profile.dart';
 import 'package:flutter/material.dart';

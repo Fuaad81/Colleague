@@ -15,6 +15,9 @@ class Start_Page extends StatefulWidget {
 class _Start_PageState extends State<Start_Page> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -32,8 +35,8 @@ class _Start_PageState extends State<Start_Page> {
                             ));
                     },
                     child: Container(
-                      width: 200,
-                      height: 50,
+                      width: width/2,
+                      height: height/16,
                       decoration: BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(15)),
@@ -56,8 +59,8 @@ class _Start_PageState extends State<Start_Page> {
                             ));
                       },
                       child: Container(
-                        width: 200,
-                        height: 50,
+                        width: width/2,
+                        height: height/16,
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(15)),
@@ -82,8 +85,8 @@ class _Start_PageState extends State<Start_Page> {
                             ));
                       },
                       child: Container(
-                        width: 200,
-                        height: 50,
+                        width: width/2,
+                        height: height/16,
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(15)),

@@ -54,6 +54,7 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
               department.text = teachersnapshot["department"] ?? '';
               phone.text = teachersnapshot["phone"] ?? '';
               email.text = teachersnapshot["email"] ?? '';
+              image_url = teachersnapshot["image_url"] ?? '';
             });
           }
         });
@@ -66,43 +67,43 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
         department.text.isNotEmpty &&
         phone.text.isNotEmpty &&
         email.text.isNotEmpty) {
-          try {
-            SharedPreferences spref = await SharedPreferences.getInstance();
-            String? teid = spref.getString("teacherId");
-            print("Shared prf id $teid");
+      try {
+        SharedPreferences spref = await SharedPreferences.getInstance();
+        String? teid = spref.getString("teacherId");
+        print("Shared prf id $teid");
 
-            if (teid!.isNotEmpty) {
-              await FirebaseFirestore.instance.collection("teacher_rg").doc(teid).update({
-                'name' : name.text,
-                'department' : department.text,
-                'phone' : phone.text,
-                'email' : email.text,
-                'image_url': image_url ?? '',
-              });
-              Fluttertoast.showToast(msg: "Profile updated");
-              Navigator.pop(context);
-            }
-          } catch (e) {
-             print("Error updating teacher data : $e");
-          }
+        if (teid!.isNotEmpty) {
+          await FirebaseFirestore.instance
+              .collection("teacher_rg")
+              .doc(teid)
+              .update({
+            'name': name.text,
+            'department': department.text,
+            'phone': phone.text,
+            'email': email.text,
+            'image_url': image_url ?? '',
+          });
+          Fluttertoast.showToast(msg: "Profile updated");
+          Navigator.pop(context);
         }
+      } catch (e) {
+        print("Error updating teacher data : $e");
+      }
+    }
   }
 
   Future<void> _uploadData() async {
     if (image != null) {
       try {
-
-        await FirebaseFirestore.instance.collection("teacher_rg").add({
-          'image_url': image_url ?? '',
-        });
-
         final ref = firebase_storage.FirebaseStorage.instance
             .ref()
             .child("teacher_prof")
             .child(DateTime.now().millisecondsSinceEpoch.toString());
         await ref.putFile(image!);
 
-        image_url = await ref.getDownloadURL();
+        setState(() {
+          image_url = ref.getDownloadURL();
+        });
       } catch (e) {
         print(e);
       }
@@ -141,9 +142,13 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                       },
                       child: CircleAvatar(
                         radius: 60,
-                        backgroundImage:
-                            image != null ? FileImage(image!) : null,
-                        child: image == null
+                        backgroundImage: image != null
+                            ? FileImage(image!) as ImageProvider<Object>
+                            : (image_url != null && image_url!.isNotEmpty)
+                                ? NetworkImage(image_url!)
+                                : null,
+                        child: image == null &&
+                                (image_url == null || image_url!.isEmpty)
                             ? Image.asset("images/avatar.jpg")
                             : null,
                       ),
