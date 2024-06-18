@@ -43,7 +43,7 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
 
       if (tid!.isNotEmpty) {
         Stream<DocumentSnapshot> teacherstreem = FirebaseFirestore.instance
-            .collection("teacher_rg")
+            .collection("teacher_reg")
             .doc(tid)
             .snapshots();
 
@@ -74,7 +74,7 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
 
         if (teid!.isNotEmpty) {
           await FirebaseFirestore.instance
-              .collection("teacher_rg")
+              .collection("teacher_reg")
               .doc(teid)
               .update({
             'name': name.text,
@@ -118,6 +118,9 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -172,8 +175,8 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: name,
                       decoration:
@@ -198,8 +201,8 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: department,
                       decoration:
@@ -224,8 +227,8 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: phone,
                       decoration:
@@ -250,8 +253,8 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: email,
                       decoration:
@@ -272,8 +275,8 @@ class _teacher_add_ProfState extends State<teacher_add_Prof> {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        width: 360,
-                        height: 50,
+                        width: width/1.2,
+                    height: height/16,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color(0xffb4472B2)),

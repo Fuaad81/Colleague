@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import, unnecessary_import, use_full_hex_values_for_flutter_colors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import, unnecessary_import, use_full_hex_values_for_flutter_colors, unused_local_variable
 
 import 'package:events/teacher/studentlist.dart';
 import 'package:events/teacher/tabbar1.dart';
@@ -14,6 +14,9 @@ class Tabbar1 extends StatefulWidget {
 class _Tabbar1State extends State<Tabbar1> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -31,7 +34,7 @@ class _Tabbar1State extends State<Tabbar1> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
                 child: Container(
-                  height: 70,
+                  height: height/12,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(40),

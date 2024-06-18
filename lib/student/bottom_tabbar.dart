@@ -14,6 +14,9 @@ class Bottom_Tabbar extends StatefulWidget {
 class _Bottom_TabbarState extends State<Bottom_Tabbar> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -31,7 +34,7 @@ class _Bottom_TabbarState extends State<Bottom_Tabbar> {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
                   child: Container(
-                    height: 70,
+                    height: height/11,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(40),

@@ -34,7 +34,7 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
 
       if (tid!.isNotEmpty) {
         Stream<DocumentSnapshot> teacherstreem = FirebaseFirestore.instance
-            .collection("teacher_rg")
+            .collection("teacher_reg")
             .doc(tid)
             .snapshots();
 
@@ -55,6 +55,9 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -106,8 +109,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: name,
                       readOnly: true,
@@ -134,8 +137,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: department,
                       readOnly: true,
@@ -162,8 +165,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: phone,
                       readOnly: true,
@@ -190,8 +193,8 @@ class _Teacher_ProfileState extends State<Teacher_Profile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 360,
-                    height: 50,
+                    width: width/1.2,
+                    height: height/16,
                     child: TextFormField(
                       controller: email,
                       readOnly: true,

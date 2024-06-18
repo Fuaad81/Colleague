@@ -12,6 +12,9 @@ class Event_edit extends StatefulWidget {
 class _Event_editState extends State<Event_edit> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -49,12 +52,11 @@ class _Event_editState extends State<Event_edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 360,
-                height: 50,
+                width: width / 1.2,
+                height: height / 16,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -74,12 +76,11 @@ class _Event_editState extends State<Event_edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 360,
-                height: 50,
+                width: width/1.2,
+                    height: height/16,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -99,12 +100,11 @@ class _Event_editState extends State<Event_edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 360,
-                height: 50,
+                width: width/1.2,
+                    height: height/16,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -124,12 +124,11 @@ class _Event_editState extends State<Event_edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 360,
-                height: 50,
+                width: width/1.2,
+                    height: height/16,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -149,12 +148,11 @@ class _Event_editState extends State<Event_edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 360,
-                height: 50,
+                width: width/1.2,
+                    height: height/16,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder()
-                  ),
+                  decoration:
+                      InputDecoration(enabledBorder: OutlineInputBorder()),
                 ),
               ),
             ],
@@ -165,22 +163,22 @@ class _Event_editState extends State<Event_edit> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap:() {
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: Container(
-                            width: 380,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Color(0xffb4472B2)),
-                            child: Center(
-                                child: Text("Submit",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold))),
-                          ),
+                    width: width/1.2,
+                    height: height/16,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffb4472B2)),
+                    child: Center(
+                        child: Text("Submit",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold))),
+                  ),
                 ),
               ],
             ),

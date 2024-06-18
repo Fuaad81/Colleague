@@ -117,7 +117,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                             String useremail = email.text.trim();
                             String userpass = password.text.trim();
                             var querysnapshot = await FirebaseFirestore.instance
-                                .collection("teacher_rg")
+                                .collection("teacher_reg")
                                 .where("email", isEqualTo: useremail)
                                 .limit(1)
                                 .get();
@@ -125,7 +125,7 @@ class _Teacher_loginState extends State<Teacher_login> {
                               var userdata = querysnapshot.docs.first.data();
                               if (userdata != null &&
                                   userdata["pass"] == userpass) {
-                                await _datasaving(userdata["teacherid"] ?? '');
+                                await _datasaving(userdata["teacherId"] ?? '');
                                 print("Login Succes");
 
                                 Navigator.push(

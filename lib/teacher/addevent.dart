@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_full_hex_values_for_flutter_colors, unused_field, prefer_typing_uninitialized_variables, non_constant_identifier_names
+// ignore_for_file: camel_case_types, prefer_const_constructors, unnecessary_import, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_full_hex_values_for_flutter_colors, unused_field, prefer_typing_uninitialized_variables, non_constant_identifier_names, curly_braces_in_flow_control_structures
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -65,6 +65,9 @@ class _Add_EventState extends State<Add_Event> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -98,7 +101,8 @@ class _Add_EventState extends State<Add_Event> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
+                    width: width/1.2,
+                    height: height/14,
                     child: TextFormField(
                       controller: eventName,
                       decoration: InputDecoration(
@@ -124,7 +128,7 @@ class _Add_EventState extends State<Add_Event> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, left: 30),
+                padding: const EdgeInsets.only(top: 20, left: 30),
                 child: Row(
                   children: [
                     Text(
@@ -140,7 +144,8 @@ class _Add_EventState extends State<Add_Event> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
+                    width: width/1.2,
+                    height: height/14,
                     child: TextFormField(
                       controller: eventDate,
                       readOnly: true,
@@ -171,7 +176,7 @@ class _Add_EventState extends State<Add_Event> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, left: 30),
+                padding: const EdgeInsets.only(top: 20, left: 30),
                 child: Row(
                   children: [
                     Text(
@@ -187,7 +192,8 @@ class _Add_EventState extends State<Add_Event> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
+                    width: width/1.2,
+                    height: height/14,
                     child: TextFormField(
                       controller: eventTime,
                       readOnly: true,
@@ -218,7 +224,7 @@ class _Add_EventState extends State<Add_Event> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, left: 30),
+                padding: const EdgeInsets.only(top: 20, left: 30),
                 child: Row(
                   children: [
                     Text(
@@ -234,7 +240,8 @@ class _Add_EventState extends State<Add_Event> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
+                    width: width/1.2,
+                    height: height/14,
                     child: TextFormField(
                       controller: eventLocation,
                       decoration: InputDecoration(
@@ -260,7 +267,7 @@ class _Add_EventState extends State<Add_Event> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, left: 30),
+                padding: const EdgeInsets.only(top: 20, left: 30),
                 child: Row(
                   children: [
                     Text(
@@ -276,8 +283,8 @@ class _Add_EventState extends State<Add_Event> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 150,
-                    width: 350,
+                    width: width/1.2,
+                    height: height/5,
                     child: TextFormField(
                       controller: eventDescription,
                       maxLines: 5,
@@ -316,8 +323,8 @@ class _Add_EventState extends State<Add_Event> {
                         }
                       },
                       child: Container(
-                        width: 350,
-                        height: 50,
+                        width: width/1.2,
+                    height: height/14,
                         decoration: BoxDecoration(
                             color: Color(0xffb4472B2),
                             borderRadius: BorderRadius.circular(10)),
@@ -326,7 +333,7 @@ class _Add_EventState extends State<Add_Event> {
                           "Submit",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 17,
+                              fontSize: 20,
                               color: Colors.white),
                         )),
                       ),

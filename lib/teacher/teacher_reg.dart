@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches, use_build_context_synchronously, avoid_print, prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, non_constant_identifier_names, use_full_hex_values_for_flutter_colors, empty_catches, use_build_context_synchronously, avoid_print, prefer_typing_uninitialized_variables, unused_local_variable
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:events/teacher/studentlist.dart';
@@ -24,40 +24,24 @@ class _TeacherRegState extends State<TeacherReg> {
   var email = TextEditingController();
   var pass = TextEditingController();
 
-  Future<void> Checking() async {
+  Future<void> addData() async {
     if (Valid.currentState!.validate()) {
       try {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(
                 email: email.text, password: pass.text);
-        String teacheruid = userCredential.user!.uid;
-        await FirebaseFirestore.instance
-            .collection("teacher_rg")
-            .doc(teacheruid)
-            .set({
-          'name': name.text,
-          'department': department.text,
-          'phone': phone.text,
-          'email': email.text,
-          'pass': pass.text,
-          "teacherid": teacheruid
+        String teacherUid = userCredential.user!.uid;
+        await FirebaseFirestore.instance.collection("teacher_reg").doc(teacherUid).set({
+          'name' : name.text,
+          'department' : department.text,
+          'phone' : phone.text,
+          'email' : email.text,
+          'pass' : pass.text,
+          'teacherId' : teacherUid,
         });
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Teacher_login(),
-            ));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Teacher_login(),));
       } catch (e) {
-        print('Unexpected error during registration: $e');
-        Fluttertoast.showToast(
-          msg: "Unexpected error during registration.",
-          toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 16.0,
-        );
+        print("unexpeted error while registration $e");
       }
     }
   }
@@ -103,7 +87,7 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width /1.2,
+                    width: width / 1.2,
                     height: height / 16,
                     child: TextFormField(
                       validator: (value) {
@@ -137,7 +121,7 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width /1.2,
+                    width: width / 1.2,
                     height: height / 16,
                     child: TextFormField(
                       validator: (value) {
@@ -171,7 +155,7 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width /1.2,
+                    width: width / 1.2,
                     height: height / 16,
                     child: TextFormField(
                       validator: (value) {
@@ -205,7 +189,7 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width /1.2,
+                    width: width / 1.2,
                     height: height / 16,
                     child: TextFormField(
                       validator: (value) {
@@ -239,7 +223,7 @@ class _TeacherRegState extends State<TeacherReg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: width /1.2,
+                    width: width / 1.2,
                     height: height / 16,
                     child: TextFormField(
                       validator: (value) {
@@ -262,9 +246,9 @@ class _TeacherRegState extends State<TeacherReg> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      onTap: () => Checking(),
+                      onTap: () => addData(),
                       child: Container(
-                        width: width/1.2,
+                        width: width / 1.2,
                         height: height / 16,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -280,7 +264,6 @@ class _TeacherRegState extends State<TeacherReg> {
                   ],
                 ),
               )
-              
             ],
           ),
         ),
