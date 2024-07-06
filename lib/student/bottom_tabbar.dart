@@ -35,6 +35,7 @@ class _Bottom_TabbarState extends State<Bottom_Tabbar> {
                   padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
                   child: Container(
                     height: height/11,
+                    width: width/1.1,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(40),
