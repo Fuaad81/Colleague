@@ -14,6 +14,9 @@ class Requests extends StatefulWidget {
 class _RequestsState extends State<Requests> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
         body: Stack(children: [
       Column(
@@ -28,8 +31,8 @@ class _RequestsState extends State<Requests> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Holi_Detail(),));
                   },
                   child: Container(
-                    width: 350,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/15,
                     decoration: BoxDecoration(
                         color: Color(0xffb4466b2),
                         borderRadius: BorderRadius.circular(10)),
@@ -62,8 +65,8 @@ class _RequestsState extends State<Requests> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 350,
-                  height: 50,
+                  width: width/1.1,
+                  height: height/15,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10)),
@@ -101,8 +104,8 @@ class _RequestsState extends State<Requests> {
                 context, MaterialPageRoute(builder: (context) => Add_Request(),));
             },
             child: Container(
-              height: 70,
-              width: 70,
+              height: height/14,
+              width: width/7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Color(0xffb4466b2)

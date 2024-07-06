@@ -14,8 +14,12 @@ class Admin_Event extends StatefulWidget {
 }
 
 class _Admin_EventState extends State<Admin_Event> {
+  
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -24,8 +28,8 @@ class _Admin_EventState extends State<Admin_Event> {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Container(
-                width: 210,
-                height: 45,
+                width: width/1.8,
+                height: height/18,
                 decoration: BoxDecoration(
                   color: Color(0xffb4466b2).withOpacity(0.2),
                   borderRadius: BorderRadius.circular(10)

@@ -16,6 +16,9 @@ class Admin_Notification extends StatefulWidget {
 class _Admin_NotificationState extends State<Admin_Notification> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Notification"),
@@ -29,8 +32,8 @@ class _Admin_NotificationState extends State<Admin_Notification> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 180,
+                  width: width / 1.1,
+                  height: height / 4.5,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.3),
                       borderRadius: BorderRadius.circular(10)),
@@ -89,7 +92,10 @@ memorable occation for all.
           child: IconButton(
               onPressed: () {
                 Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Add_Notification(),));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Add_Notification(),
+                    ));
               },
               icon: Icon(
                 CupertinoIcons.add_circled_solid,

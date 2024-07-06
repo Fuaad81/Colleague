@@ -14,6 +14,9 @@ class Event_Teacher extends StatefulWidget {
 class _Event_TeacherState extends State<Event_Teacher> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -27,8 +30,8 @@ class _Event_TeacherState extends State<Event_Teacher> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Event_Teacher_Details(),));
                   },
                   child: Container(
-                    width: 360,
-                    height: 60,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10)
@@ -55,8 +58,8 @@ class _Event_TeacherState extends State<Event_Teacher> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 360,
-                  height: 60,
+                  width: width/1.1,
+                  height: height/16,
                   decoration: BoxDecoration(
                     color: Color(0xffb4466b2),
                     borderRadius: BorderRadius.circular(10)

@@ -14,6 +14,9 @@ class Detail_Reg extends StatefulWidget {
 class _Detail_RegState extends State<Detail_Reg> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Stack(
         children:[ Column(
@@ -21,7 +24,7 @@ class _Detail_RegState extends State<Detail_Reg> {
           children: [
             Lottie.asset("json/Animation.json",
             repeat: false,
-            height: 300
+            height: height/3
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,8 +58,8 @@ class _Detail_RegState extends State<Detail_Reg> {
                     Navigator.pop(context);
                   },
                   child: Container(
-                    width: 350,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/15,
                     decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10)

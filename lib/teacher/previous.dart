@@ -13,6 +13,9 @@ class Previous extends StatefulWidget {
 class _PreviousState extends State<Previous> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -28,8 +31,8 @@ class _PreviousState extends State<Previous> {
                         builder: (context) => Onam(),));
                   },
                   child: Container(
-                    width: 380,
-                    height: 70,
+                    width: width/1.1,
+                    height: height/11,
                     decoration: BoxDecoration(
                       color: Color(0xffb4472B2),
                       borderRadius: BorderRadius.circular(10)
@@ -53,8 +56,8 @@ class _PreviousState extends State<Previous> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                     color: Color(0xffb4472B2),
                     borderRadius: BorderRadius.circular(10)

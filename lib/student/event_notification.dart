@@ -12,6 +12,9 @@ class Event_Notification extends StatefulWidget {
 class _Event_NotificationState extends State<Event_Notification> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -26,8 +29,8 @@ class _Event_NotificationState extends State<Event_Notification> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 350,
-                height: 180,
+                width: width/1.1,
+                height: height/5.5,
                 decoration: BoxDecoration(
                   color: Color(0xffb4466b2).withOpacity(0.2),
                   borderRadius: BorderRadius.circular(10)

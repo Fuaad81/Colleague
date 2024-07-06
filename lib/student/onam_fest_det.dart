@@ -13,6 +13,9 @@ class Onam_Fest_Detail extends StatefulWidget {
 class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -22,8 +25,8 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
-                  height: 160,
+                  width: width/1.1,
+                  height: height/5.5,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -169,21 +172,14 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
               ],
             ),
           ),
-          Row(
-            children: [
-              Container(
-                width: 350,
-              )
-            ],
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -195,7 +191,7 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
                     subtitle: Text("Department"),
                     trailing: IconButton(
                         onPressed: () {},
-                        icon: Image.asset("images/manwithstar1.jpg",height: 30,)),
+                        icon: Image.asset("images/manwithstar1.jpg",height: height/18,)),
                   ),
                 )
               ],
@@ -207,8 +203,8 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -229,8 +225,8 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -251,8 +247,8 @@ class _Onam_Fest_DetailState extends State<Onam_Fest_Detail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),

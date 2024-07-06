@@ -12,6 +12,9 @@ class Event_Student_Details extends StatefulWidget {
 class _Event_Student_DetailsState extends State<Event_Student_Details> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Student Details"),
@@ -21,13 +24,10 @@ class _Event_Student_DetailsState extends State<Event_Student_Details> {
       body: SafeArea(
         child: Column(
           children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10,bottom: 5),
-                child: Image(
-                  height: 100,
-                  width: 100,
-                  image: AssetImage('images/avatar.jpg')),
-              ),
+              Image(
+                height: height/9,
+                width: width/5,
+                image: AssetImage('images/avatar.jpg')),
               Text('Adhil',style: TextStyle(fontSize: 16),),
              Padding(
                padding: const EdgeInsets.only(top: 20),
@@ -123,8 +123,8 @@ class _Event_Student_DetailsState extends State<Event_Student_Details> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 50,
-                    width: 165,
+                    height: height/15,
+                    width: width/2.5,
                     decoration: BoxDecoration(
                         color: Color(0xFF3063A5),
                         borderRadius: BorderRadius.circular(7)),
@@ -135,8 +135,8 @@ class _Event_Student_DetailsState extends State<Event_Student_Details> {
                     )),
                   ),
                   Container(
-                    height: 50,
-                    width: 165,
+                    height: height/15,
+                    width: width/2.5,
                     decoration: BoxDecoration(
                         color: Color(0xFF3063A5),
                         borderRadius: BorderRadius.circular(7)),

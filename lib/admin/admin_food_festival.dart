@@ -14,6 +14,9 @@ class Admin_Food_Festival extends StatefulWidget {
 class _Admin_Food_FestivalState extends State<Admin_Food_Festival> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Event Details"),
@@ -160,7 +163,7 @@ taciti sociosqu ad litora''',
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
+                  width: width/1.1,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.3),
                       borderRadius: BorderRadius.circular(10)),
@@ -193,7 +196,7 @@ taciti sociosqu ad litora''',
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 370,
+                  width: width/1.1,
                   decoration: BoxDecoration(
                       color: Color.fromARGB(174, 190, 189, 161),
                       borderRadius: BorderRadius.circular(10)),
@@ -216,8 +219,8 @@ taciti sociosqu ad litora''',
 
                     },
                     child: Container(
-                      width: 370,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/16,
                       decoration: BoxDecoration(
                         color: Color(0xffb4466b2),
                         borderRadius: BorderRadius.circular(10)
@@ -244,8 +247,8 @@ taciti sociosqu ad litora''',
                       
                     },
                     child: Container(
-                      width: 370,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/16,
                       decoration: BoxDecoration(
                         color: Color(0xffb4466b2),
                         borderRadius: BorderRadius.circular(10)

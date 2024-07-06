@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class sd_profile extends StatefulWidget {
-  const sd_profile({super.key});
+class Event_edit extends StatefulWidget {
+  const Event_edit({super.key});
 
   @override
-  State<sd_profile> createState() => _sd_profileState();
+  State<Event_edit> createState() => _Event_editState();
 }
 
-class _sd_profileState extends State<sd_profile> {
+class _Event_editState extends State<Event_edit> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -76,8 +76,8 @@ class _sd_profileState extends State<sd_profile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: width/1.2,
-                    height: height/16,
+                width: width / 1.2,
+                height: height / 16,
                 child: TextFormField(
                   decoration:
                       InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -100,8 +100,8 @@ class _sd_profileState extends State<sd_profile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: width/1.2,
-                    height: height/16,
+                width: width / 1.2,
+                height: height / 16,
                 child: TextFormField(
                   decoration:
                       InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -124,8 +124,8 @@ class _sd_profileState extends State<sd_profile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: width/1.2,
-                    height: height/16,
+                width: width / 1.2,
+                height: height / 16,
                 child: TextFormField(
                   decoration:
                       InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -148,8 +148,8 @@ class _sd_profileState extends State<sd_profile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: width/1.2,
-                    height: height/16,
+                width: width / 1.2,
+                height: height / 16,
                 child: TextFormField(
                   decoration:
                       InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -167,8 +167,8 @@ class _sd_profileState extends State<sd_profile> {
                     Navigator.pop(context);
                   },
                   child: Container(
-                    width: width/1.2,
-                    height: height/16,
+                    width: width / 1.2,
+                    height: height / 16,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffb4472B2)),

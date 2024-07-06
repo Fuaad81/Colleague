@@ -14,6 +14,9 @@ class Bottum_previous extends StatefulWidget {
 class _Bottum_previousState extends State<Bottum_previous> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -28,8 +31,8 @@ class _Bottum_previousState extends State<Bottum_previous> {
                       context, MaterialPageRoute(builder: (context) => Onam_Festival(),));
                   },
                   child: Container(
-                    width: 350,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10),
@@ -53,8 +56,8 @@ class _Bottum_previousState extends State<Bottum_previous> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 350,
-                  height: 50,
+                  width: width/1.1,
+                  height: height/16,
                   decoration: BoxDecoration(
                     color: Color(0xffb4466b2),
                     borderRadius: BorderRadius.circular(10),

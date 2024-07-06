@@ -14,6 +14,9 @@ class Onam_Fest_Photo extends StatefulWidget {
 class _Onam_Fest_PhotoState extends State<Onam_Fest_Photo> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Stack(
         children: [
@@ -30,8 +33,8 @@ class _Onam_Fest_PhotoState extends State<Onam_Fest_Photo> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Add_Image(),));
                 },
                 child: Container(
-                  width: 70,
-                  height: 70,
+                  width: width/7,
+                  height: height/14,
                   decoration: BoxDecoration(
                     color: Color(0xffb4466b2),
                     borderRadius: BorderRadius.circular(50),

@@ -13,11 +13,14 @@ class Add_Notification extends StatefulWidget {
 class _Add_NotificationState extends State<Add_Notification> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
        appBar: AppBar(
           title: Text("Add Notification"),
           centerTitle: true,
-          toolbarHeight: 90,
+          toolbarHeight: height/14,
         ),
         body: Stack(
           children: [
@@ -42,8 +45,8 @@ class _Add_NotificationState extends State<Add_Notification> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 370,
-                        height: 50,
+                        width: width/1.1,
+                        height: height/16,
                         child: TextFormField(
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -74,8 +77,8 @@ class _Add_NotificationState extends State<Add_Notification> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 370,
-                        height: 300,
+                        width: width/1.1,
+                        height: height/3,
                         child: TextFormField(
                           maxLines: 8,
                           decoration: InputDecoration(
@@ -99,8 +102,8 @@ class _Add_NotificationState extends State<Add_Notification> {
                     
                   },
                   child: Container(
-                    width: 370,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10)

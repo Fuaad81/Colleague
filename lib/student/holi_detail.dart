@@ -13,6 +13,9 @@ class Holi_Detail extends StatefulWidget {
 class _Holi_DetailState extends State<Holi_Detail> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -168,8 +171,8 @@ class _Holi_DetailState extends State<Holi_Detail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 60,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),

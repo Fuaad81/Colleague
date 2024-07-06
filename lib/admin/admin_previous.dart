@@ -13,6 +13,9 @@ class Admin_Previous extends StatefulWidget {
 class _Admin_PreviousState extends State<Admin_Previous> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -22,8 +25,8 @@ class _Admin_PreviousState extends State<Admin_Previous> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 360,
-                  height: 130,
+                  width: width/1.1,
+                  height: height/7,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.3),
                       borderRadius: BorderRadius.circular(10)),
@@ -129,8 +132,8 @@ class _Admin_PreviousState extends State<Admin_Previous> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 360,
-                  height: 130,
+                  width: width/1.1,
+                  height: height/7,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.3),
                       borderRadius: BorderRadius.circular(10)),

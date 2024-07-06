@@ -59,6 +59,9 @@ class _Student_RegState extends State<Student_Reg> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -79,7 +82,7 @@ class _Student_RegState extends State<Student_Reg> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 20, left: 40),
+                padding: const EdgeInsets.only(top: 20, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -95,8 +98,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: name,
                       decoration: InputDecoration(
@@ -107,7 +110,7 @@ class _Student_RegState extends State<Student_Reg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 40),
+                padding: const EdgeInsets.only(top: 40, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -123,8 +126,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: department,
                       decoration: InputDecoration(
@@ -135,7 +138,7 @@ class _Student_RegState extends State<Student_Reg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 40),
+                padding: const EdgeInsets.only(top: 40, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -151,8 +154,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: reg_no,
                       decoration: InputDecoration(
@@ -163,7 +166,7 @@ class _Student_RegState extends State<Student_Reg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 40),
+                padding: const EdgeInsets.only(top: 40, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -179,8 +182,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: phone,
                       decoration: InputDecoration(
@@ -191,7 +194,7 @@ class _Student_RegState extends State<Student_Reg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 40),
+                padding: const EdgeInsets.only(top: 40, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -207,8 +210,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: email,
                       decoration: InputDecoration(
@@ -219,7 +222,7 @@ class _Student_RegState extends State<Student_Reg> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 40),
+                padding: const EdgeInsets.only(top: 40, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -235,8 +238,8 @@ class _Student_RegState extends State<Student_Reg> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 40,
+                    width: width/1.1,
+                  height: height/15,
                     child: TextFormField(
                       controller: pass,
                       decoration: InputDecoration(
@@ -257,7 +260,7 @@ class _Student_RegState extends State<Student_Reg> {
                         Checking();
                       },
                       style: ButtonStyle(
-                        fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                        fixedSize: MaterialStatePropertyAll(Size(width/1.1, height/15)),
                         backgroundColor: MaterialStatePropertyAll(Colors.blue),
                         foregroundColor: MaterialStatePropertyAll(Colors.white),
                         textStyle: MaterialStatePropertyAll(GoogleFonts.poppins(

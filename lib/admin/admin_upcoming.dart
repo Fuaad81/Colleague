@@ -38,23 +38,18 @@ class _Admin_UpcomingState extends State<Admin_Upcoming> {
                                 builder: (context) => Admin_Food_Festival(),
                               ));
                         },
-                        child: Container(
-                          width: 370,
-                          decoration: BoxDecoration(
-                              color: Color(0xffb4466b2),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: ListTile(
-                            title: Text(
-                              name[index],
-                              style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                      color: Colors.white, fontSize: 18)),
-                            ),
-                            trailing: Icon(
-                              CupertinoIcons.delete_solid,
-                              color: Colors.white,
-                              size: 30,
-                            ),
+                        child: ListTile(
+                          tileColor: Color(0xffb4466b2),
+                          title: Text(
+                            name[index],
+                            style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    color: Colors.white, fontSize: 18)),
+                          ),
+                          trailing: Icon(
+                            CupertinoIcons.delete_solid,
+                            color: Colors.white,
+                            size: 30,
                           ),
                         ),
                       ),

@@ -14,6 +14,9 @@ class Upcoming extends StatefulWidget {
 class _UpcomingState extends State<Upcoming> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: SafeArea(
           child: Column(
@@ -32,8 +35,8 @@ class _UpcomingState extends State<Upcoming> {
                         ));
                   },
                   child: Container(
-                    width: 380,
-                    height: 70,
+                    width: width/1.1,
+                    height: height/11,
                     decoration: BoxDecoration(
                         color: Color(0xffb4472B2),
                         borderRadius: BorderRadius.circular(10)),
@@ -58,8 +61,8 @@ class _UpcomingState extends State<Upcoming> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4472B2),
                       borderRadius: BorderRadius.circular(10)),
@@ -83,8 +86,8 @@ class _UpcomingState extends State<Upcoming> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 70,
+                  width: width/1.1,
+                  height: height/11,
                   decoration: BoxDecoration(
                       color: Color(0xffb4472B2),
                       borderRadius: BorderRadius.circular(10)),
@@ -116,8 +119,8 @@ class _UpcomingState extends State<Upcoming> {
                         ));
                   },
                   child: Container(
-                    width: 60,
-                    height: 60,
+                    width: width/7,
+                    height: height/14,
                     decoration: BoxDecoration(
                         color: Color(0xffb4472B2),
                         borderRadius: BorderRadius.circular(50)),

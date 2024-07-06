@@ -13,6 +13,9 @@ class Event_Teacher_Details extends StatefulWidget {
 class _Event_Teacher_DetailsState extends State<Event_Teacher_Details> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Teacher Details"),
@@ -25,8 +28,8 @@ class _Event_Teacher_DetailsState extends State<Event_Teacher_Details> {
               Padding(
                 padding: const EdgeInsets.only(top: 10,bottom: 5),
                 child: Image(
-                  height: 100,
-                  width: 100,
+                  height: height/9,
+                  width: width/4,
                   image: AssetImage('images/avatar.jpg')),
               ),
               Text('Anandhu',style: TextStyle(fontSize: 16),),
@@ -125,8 +128,8 @@ class _Event_Teacher_DetailsState extends State<Event_Teacher_Details> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 50,
-                    width: 165,
+                    height: height/15,
+                    width: width/2.5,
                     decoration: BoxDecoration(
                         color: Color(0xFF3063A5),
                         borderRadius: BorderRadius.circular(7)),
@@ -137,8 +140,8 @@ class _Event_Teacher_DetailsState extends State<Event_Teacher_Details> {
                     )),
                   ),
                   Container(
-                    height: 50,
-                    width: 165,
+                    height: height/15,
+                    width: width/2.5,
                     decoration: BoxDecoration(
                         color: Color(0xFF3063A5),
                         borderRadius: BorderRadius.circular(7)),

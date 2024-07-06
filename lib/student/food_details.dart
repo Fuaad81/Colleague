@@ -14,6 +14,9 @@ class Food_Details extends StatefulWidget {
 class _Food_DetailsState extends State<Food_Details> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Details"),
@@ -27,8 +30,8 @@ class _Food_DetailsState extends State<Food_Details> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 110,
+                  width: width/1.1,
+                  height: height/6.5,
                   decoration: BoxDecoration(
                       color: Color(0xffb4466b2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -141,8 +144,8 @@ class _Food_DetailsState extends State<Food_Details> {
                 return Padding(
                   padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
                   child: Container(
-                    width: 280,
-                    height: 70,
+                    width: width/1.1,
+                    height: height/11,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffb4466b2).withOpacity(0.2)),
@@ -177,8 +180,8 @@ class _Food_DetailsState extends State<Food_Details> {
                         ));
                   },
                   child: Container(
-                    width: 350,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                         color: Color(0xffb5566b2),
                         borderRadius: BorderRadius.circular(10)),

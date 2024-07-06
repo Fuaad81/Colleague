@@ -18,6 +18,9 @@ class _Add_ImageState extends State<Add_Image> {
   File? image;
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Photo"),
@@ -42,8 +45,8 @@ class _Add_ImageState extends State<Add_Image> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 370,
-                    height: 350,
+                    width: width/1.1,
+                    height: height/2.5,
                     decoration: BoxDecoration(
                         border: Border.all(
                           color: Color(0xffb4466b2),
@@ -63,7 +66,7 @@ class _Add_ImageState extends State<Add_Image> {
                               ? Image.asset(
                                   "images/add-image.png",
                                   color: Color(0xffb4466b2).withOpacity(0.4),
-                                  width: 200,
+                                  width: width/2,
                                 )
                               : Image.file(
                                   image!,
@@ -89,8 +92,8 @@ class _Add_ImageState extends State<Add_Image> {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 370,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/15,
                       child: TextFormField(
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -116,8 +119,8 @@ class _Add_ImageState extends State<Add_Image> {
                       context, MaterialPageRoute(builder: (context) => Onam_Fest_Photo(),));
                   },
                   child: Container(
-                    width: 370,
-                    height: 50,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                         color: Color(0xffb4466b2),
                         borderRadius: BorderRadius.circular(10)),

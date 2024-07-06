@@ -14,6 +14,9 @@ class Event_Student extends StatefulWidget {
 class _Event_StudentState extends State<Event_Student> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -28,8 +31,8 @@ class _Event_StudentState extends State<Event_Student> {
                       context, MaterialPageRoute(builder: (context) => Event_Student_Details(),));
                   },
                   child: Container(
-                    width: 360,
-                    height: 60,
+                    width: width/1.1,
+                    height: height/16,
                     decoration: BoxDecoration(
                       color: Color(0xffb4466b2),
                       borderRadius: BorderRadius.circular(10)
@@ -56,8 +59,8 @@ class _Event_StudentState extends State<Event_Student> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 360,
-                  height: 60,
+                  width: width/1.1,
+                  height: height/16,
                   decoration: BoxDecoration(
                     color: Color(0xffb4466b2),
                     borderRadius: BorderRadius.circular(10)

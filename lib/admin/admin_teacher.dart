@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables
+// ignore_for_file: camel_case_types, prefer_const_constructors, use_full_hex_values_for_flutter_colors, prefer_const_literals_to_create_immutables, unused_local_variable
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,43 +12,37 @@ class Admin_Teacher extends StatefulWidget {
 
 class _Admin_TeacherState extends State<Admin_Teacher> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
     return Scaffold(
       body: ListView.builder(
         itemCount: 6,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-            child: Container(
-              width: 350,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xffb4466b2).withOpacity(0.3),
+            child:ListTile(
+              tileColor: Color(0xffb4466b2).withOpacity(0.3),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage("images/avatar.jpg"),
               ),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage("images/avatar.jpg"),
-                ),
-                title: Text("Teacher name"),
-                subtitle: Text("Department"),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          CupertinoIcons.clear_circled,
-                          color: Colors.red
-                          ,size: 30
-                        )),
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          CupertinoIcons.check_mark_circled,
-                          color: Colors.green,size: 30,
-                        )),
-                  ],
-                ),
+              title: Text("Teacher name"),
+              subtitle: Text("Department"),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        CupertinoIcons.clear_circled,
+                        color: Colors.red
+                        ,size: 30
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        CupertinoIcons.check_mark_circled,
+                        color: Colors.green,size: 30,
+                      )),
+                ],
               ),
             ),
           );

@@ -13,6 +13,9 @@ class Admin_Add_Event extends StatefulWidget {
 class _Admin_Add_EventState extends State<Admin_Add_Event> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -44,8 +47,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/16,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -70,8 +73,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/16,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -96,8 +99,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/16,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -122,8 +125,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/16,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -148,8 +151,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 150,
-                  width: 350,
+                  height: height/5,
+                  width: width/1.1,
                   child: TextFormField(
                     maxLines: 5,
                     decoration: InputDecoration(
@@ -160,7 +163,7 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 80),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -169,8 +172,8 @@ class _Admin_Add_EventState extends State<Admin_Add_Event> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      width: 350,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/16,
                       decoration: BoxDecoration(
                           color: Color(0xffb4472B2),
                           borderRadius: BorderRadius.circular(10)),

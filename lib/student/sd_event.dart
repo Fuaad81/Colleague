@@ -30,10 +30,10 @@ class _Sd_Event_tabState extends State<Sd_Event_tab> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Event_edit(),
+                        builder: (context) => sd_profile(),
                       ));
                 },
-                icon: Icon(Icons.person_2_outlined)),
+                icon: Icon(Icons.person_2_outlined,size: 35,)),
             IconButton(
                 onPressed: () {
                   Navigator.push(
@@ -42,7 +42,7 @@ class _Sd_Event_tabState extends State<Sd_Event_tab> {
                         builder: (context) => Event_Notification(),
                       ));
                 },
-                icon: Icon(Icons.notifications_active_outlined))
+                icon: Icon(Icons.notifications_active_outlined,size: 30,))
           ],
         ),
         body: Column(

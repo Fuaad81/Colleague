@@ -15,6 +15,9 @@ class Bottum_Tab extends StatefulWidget {
 class _Bottum_TabState extends State<Bottum_Tab> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -30,8 +33,8 @@ class _Bottum_TabState extends State<Bottum_Tab> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 15),
                 child: Container(
-                  width: 350,
-                  height: 70,
+                  width: width/1.2,
+                  height: height/12,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(

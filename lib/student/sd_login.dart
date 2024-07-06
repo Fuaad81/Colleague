@@ -28,6 +28,9 @@ class _St_loginState extends State<St_login> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Form(
@@ -38,8 +41,8 @@ class _St_loginState extends State<St_login> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomPaint(
-                    size: Size(380,
-                        380), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                    size: Size(width/1.2,
+                        height/2.2), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
                     painter: RPSCustomPainter(),
                   ),
                 ],
@@ -74,8 +77,8 @@ class _St_loginState extends State<St_login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/15,
                       child: TextFormField(
                         controller: email,
                         decoration: InputDecoration(hintText: "Email Address"),
@@ -90,8 +93,8 @@ class _St_loginState extends State<St_login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: width/1.1,
+                  height: height/15,
                       child: TextFormField(
                         controller: password,
                         decoration: InputDecoration(hintText: "Password"),
@@ -106,6 +109,17 @@ class _St_loginState extends State<St_login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
+                      style: ButtonStyle(
+                        fixedSize: MaterialStatePropertyAll(Size(width/1.1, height/15)),
+                        backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                        foregroundColor: MaterialStatePropertyAll(Colors.white),
+                        textStyle: MaterialStatePropertyAll(GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                          )
+                        ))
+                      ),
                         onPressed: () async {
                           if (valid.currentState!.validate()) {
                             String usermail = email.text.trim();

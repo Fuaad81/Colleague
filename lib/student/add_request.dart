@@ -13,6 +13,9 @@ class Add_Request extends StatefulWidget {
 class _Add_RequestState extends State<Add_Request> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -27,7 +30,7 @@ class _Add_RequestState extends State<Add_Request> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
+              padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
                   Text(
@@ -43,8 +46,8 @@ class _Add_RequestState extends State<Add_Request> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/15,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -53,7 +56,7 @@ class _Add_RequestState extends State<Add_Request> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
+              padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
                   Text(
@@ -69,8 +72,8 @@ class _Add_RequestState extends State<Add_Request> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/15,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -79,7 +82,7 @@ class _Add_RequestState extends State<Add_Request> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
+              padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
                   Text(
@@ -95,8 +98,8 @@ class _Add_RequestState extends State<Add_Request> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/15,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -105,7 +108,7 @@ class _Add_RequestState extends State<Add_Request> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
+              padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
                   Text(
@@ -121,8 +124,8 @@ class _Add_RequestState extends State<Add_Request> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 350,
-                  height: 40,
+                  width: width/1.1,
+                  height: height/15,
                   child: TextFormField(
                     decoration:
                         InputDecoration(enabledBorder: OutlineInputBorder()),
@@ -131,7 +134,7 @@ class _Add_RequestState extends State<Add_Request> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
+              padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
                   Text(
@@ -147,8 +150,8 @@ class _Add_RequestState extends State<Add_Request> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 150,
-                  width: 350,
+                  width: width/1.1,
+                  height: height/5,
                   child: TextFormField(
                     maxLines: 5,
                     decoration: InputDecoration(
@@ -159,7 +162,7 @@ class _Add_RequestState extends State<Add_Request> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -168,8 +171,8 @@ class _Add_RequestState extends State<Add_Request> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      width: 350,
-                      height: 50,
+                      width: width/1.1,
+                      height: height/15,
                       decoration: BoxDecoration(
                           color: Color(0xffb4472B2),
                           borderRadius: BorderRadius.circular(10)),

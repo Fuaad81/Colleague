@@ -14,6 +14,9 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var width = size.width;
+    var height = size.height;
     return Scaffold(
       body: Column(
         children: [
@@ -23,8 +26,8 @@ class _DetailsState extends State<Details> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 380,
-                  height: 110,
+                  width: width/1.1,
+                  height: height/6.5,
                   decoration: BoxDecoration(
                       color: Color(0xffb4472B2).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10)),
@@ -137,8 +140,8 @@ class _DetailsState extends State<Details> {
                 return Padding(
                   padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                   child: Container(
-                    width: 300,
-                    height: 70,
+                    width: width/1.1,
+                    height: height/11,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffb4472B2).withOpacity(0.2)),
